@@ -45,7 +45,7 @@ jobs:
       - name : Commit Changes
         run: |
            git clone --depth=1 "https://github.com/${{ secrets.USERNAME }}/blabflow"
-           cp keys.json blabflow/keys.json && cp stamp.md blabflow/stamp.md
+           cp keys.json blabflow/keys.json
            cd blabflow && git add -u
            git commit -m "commit : $(curl -s http://whatthecommit.com/index.txt)"
            git push "https://${{ secrets.TOKEN }}@github.com/${{ secrets.USERNAME }}/blabflow" HEAD:main
